@@ -1,0 +1,47 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <style>
+  .form{
+    margin-top: 570px;
+    margin-left: 500px;
+    margin-right: 400px;
+    background-color: #CD6155;
+  }
+  body{
+    width: 100%;
+    height: 150px;
+    background-size: 100%;
+    background-image: url(1.jpg);
+    background-repeat: no-repeat;
+  }
+</style>
+  <body class="img">
+    <form ng-app="myApp" ng-controller="myCtrl" class="form" name="myForm" novalidate>
+        <h2>LOGIN</h2>
+        <br><br><p>
+        User Id: <input type="text" name="user" ng-model="user" required>
+        <span style="color:white" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+<span ng-show="myForm.user.$error.required">Username is required.</span>
+</span></p>
+        <br>
+        <br><p>
+        Password: <input type="password" name="pass" ng-model="pass" required>
+        <span style="color:white" ng-show="myForm.pass.$dirty && myForm.pass.$invalid">
+          <span ng-show="myForm.pass.$error.required">Password is required.</span></p>
+        <br>
+        <br>
+        <button href="#">LOGIN</button>
+        <br><br>
+        New User? <a href="#">Register here</a>
+      </form>
+    </div>
+    <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope){
+      $scope.user = 'a';
+      $scope.pass = " ";
+    });
+    </script>
+  </body>
+  </html>
